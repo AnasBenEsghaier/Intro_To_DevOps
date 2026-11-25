@@ -14,7 +14,8 @@ pipeline {
             }
         }
 	stage('build & package') {
-		steps { 
+		steps {
+			cd Backend 
 			sh 'mvn clean package -DskipTests'
 		}
 	}    
