@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
+                git branch: 'Anas_sgh',
                     credentialsId: 'Github_Token',
                     url: 'https://github.com/AnasBenEsghaier/Intro_To_DevOps.git'
             }
@@ -20,13 +20,5 @@ pipeline {
 			}
 		}
 	}    
-    }
-    post {
-        success {
-            echo 'Build OK. The jar is in backend/target/'
-        }
-        failure {
-            echo 'Build failed.'
-        }
     }
 }
