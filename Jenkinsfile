@@ -21,4 +21,12 @@ pipeline {
 		}
 	}    
     }
+    post {
+        success {
+            echo 'Build OK. The jar is in backend/target/'
+        }
+        failure {
+            echo 'Build failed.'
+        }
+    }
 }
