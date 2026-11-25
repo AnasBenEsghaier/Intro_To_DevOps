@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+	
+    tools {
+	maven 'M2_HOME'
+    }
     stages {
         stage('Checkout Code') {
             steps {
@@ -9,5 +12,10 @@ pipeline {
                     url: 'https://github.com/AnasBenEsghaier/Intro_To_DevOps.git'
             }
         }
+	stage('build & package') {
+		steps { 
+			sh 'mvn clean package -DskipTests'
+		}
+	}    
     }
 }
